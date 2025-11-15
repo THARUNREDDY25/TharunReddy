@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>TharunReddy | Video Editor</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+<header>
+  <div class="container nav">
+    <div class="logo">THARUNREDDY / VIDEO EDITOR</div>
+    <nav>
+      <ul>
+        <li><a href="index.html" class="active">Home</a></li>
+        <li><a href="portfolio.html">Work</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="services.html">Services</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+<main>
+  <section class="page">
+    <div class="container hero-layout">
+      <div>
+        <div class="hero-meta">Freelance Video Editor</div>
+        <h1 class="hero-title">
+          I turn raw footage into
+          <span class="hero-highlight">clean, cinematic edits.</span>
+        </h1>
+        <p class="hero-tagline">
+          I specialize in reels, YouTube videos, wedding highlights and promo content,
+          helping creators and brands tell powerful visual stories.
+        </p>
+
+        <div class="hero-buttons">
+          <a href="portfolio.html" class="btn btn-primary">▶ Watch my work</a>
+          <a href="contact.html" class="btn">✉ Book a project</a>
+        </div>
+
+        <p class="hero-note">
+          <strong>Available for freelance work</strong> · Remote & on-site (depending on project)
+        </p>
+      </div>
+
+      <div class="hero-video-wrapper">
+        <div class="hero-video-inner">
+          <!-- Replace with your own showreel embed -->
+          <iframe
+            src="https://www.youtube.com/embed/dQw4w9WgXcQ"
+            title="Showreel"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+            allowfullscreen>
+          </iframe>
+        </div>
+        <p class="hero-video-caption">
+          60-second showreel featuring reels, wedding highlights and promo edits.
+        </p>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="container">
+    © <span id="year"></span> TharunReddy · Video Editing Portfolio
+  </div>
+</footer>
+
+<script>
+  document.getElementById("year").textContent = new Date().getFullYear();
+</script>
+</body>
+</html>

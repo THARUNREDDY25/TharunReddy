@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Contact | TharunReddy - Video Editor</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+<header>
+  <div class="container nav">
+    <div class="logo">
+      THARUNREDDY / VIDEO EDITOR
+      <span class="logo-pill">ENQUIRY</span>
+    </div>
+    <nav>
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="portfolio.html">Work</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="services.html">Services</a></li>
+        <li><a href="contact.html" class="active">Contact</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+<main>
+  <section class="page">
+    <div class="container">
+      <p class="section-kicker">Project Enquiry</p>
+      <h1 class="section-title">Start a Project with Me</h1>
+      <p class="section-subtitle">
+        Kindly share a few details about your requirement so I can understand the scope
+        and respond with a suitable approach, timeline and estimated pricing.
+      </p>
+
+      <div class="contact-layout">
+        <!-- LEFT COLUMN – CONTACT & INFO -->
+        <div class="contact-details">
+          <p>
+            I primarily work on <strong>reels, YouTube videos, wedding highlights and promo content</strong>.
+            If you already have footage uploaded (Drive, WeTransfer, etc.), you can mention the link
+            in the project details field.
+          </p>
+
+          <div>
+            <div class="contact-item-title">Business Email</div>
+            <!-- 🔁 Update these with your real contact when ready -->
+            <a href="mailto:katlatharunreddy@gmail.com">katlatharunreddy@gmail.com</a>
+          </div>
+
+          <div>
+            <div class="contact-item-title">Phone / WhatsApp</div>
+            <a href="https://wa.me/916302864532" target="_blank">
+              +91-63028-64532 &middot; Tap to chat on WhatsApp
+            </a>
+          </div>
+
+          <div>
+            <div class="contact-item-title">Social Profiles</div>
+            <div class="social-links">
+              <a href="https://www.instagram.com/" target="_blank" class="social-pill">Instagram</a>
+              <a href="https://www.youtube.com/" target="_blank" class="social-pill">YouTube</a>
+              <a href="https://www.linkedin.com/" target="_blank" class="social-pill">LinkedIn</a>
+            </div>
+          </div>
+
+          <div>
+            <div class="contact-item-title">Helpful to Mention</div>
+            <p class="form-note">
+              • Type of video: Reel / YouTube / Wedding / Promo / Other<br />
+              • Approximate final video duration<br />
+              • Any reference links or styles you like<br />
+              • Deadline or event date (if applicable)
+            </p>
+          </div>
+
+          <div>
+            <div class="contact-item-title">Response Time</div>
+            <p class="form-note">
+              I generally respond to new project enquiries within
+              <strong>24–48 hours</strong>. For urgent timelines, please also send a WhatsApp message.
+            </p>
+          </div>
+        </div>
+
+        <!-- RIGHT COLUMN – ENQUIRY FORM -->
+        <form id="contact-form">
+          <div>
+            <label for="name">Full Name</label>
+            <input
+              id="name"
+              type="text"
+              placeholder="Your full name"
+              required
+            />
+          </div>
+
+          <div>
+            <label for="email">Email Address</label>
+            <input
+              id="email"
+              type="email"
+              placeholder="you@example.com"
+              required
+            />
+          </div>
+
+          <div>
+            <label for="project">Project Details</label>
+            <textarea
+              id="project"
+              placeholder="Example: I need 3 Instagram Reels (15–30 seconds each) edited from event footage. Prefer a fast, modern style with beat sync and captions. Deadline in two weeks. Footage available on Google Drive."
+              required
+            ></textarea>
+          </div>
+
+          <button type="submit" class="btn btn-primary">
+            Submit enquiry
+          </button>
+
+          <p class="form-note" id="form-status">
+            Please provide as much detail as you can. I’ll review your enquiry and respond via email.
+          </p>
+        </form>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="container">
+    © <span id="year"></span> Tharun · Video Editing Portfolio
+  </div>
+</footer>
+
+<!-- YEAR + BACKEND SCRIPT -->
+<script>
+  // Set current year in footer
+  document.getElementById("year").textContent = new Date().getFullYear();
+
+  // Google Apps Script Web App URL (backend)
+  const SCRIPT_URL =
+    "https://script.google.com/macros/s/AKfycbzkJYMKjRLD5EjNRfz-_5XAE9a_snY8YLNeD8Nep1SS7cNlAN0gIr0osk3CTy_V9BdXSw/exec";
+
+  const form = document.getElementById("contact-form");
+  const statusEl = document.getElementById("form-status");
+
+  form.addEventListener("submit", async (e) => {
+    e.preventDefault();
+
+    const name = document.getElementById("name").value.trim();
+    const email = document.getElementById("email").value.trim();
+    const project = document.getElementById("project").value.trim();
+
+    if (!name || !email || !project) {
+      statusEl.textContent = "Kindly complete all fields before submitting.";
+      statusEl.style.color = "#f97373"; // red
+      return;
+    }
+
+    statusEl.textContent = "Submitting your enquiry...";
+    statusEl.style.color = "#9ca3af"; // neutral
+
+    try {
+      await fetch(SCRIPT_URL, {
+        method: "POST",
+        mode: "no-cors",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ name, email, project }),
+      });
+
+      statusEl.textContent =
+        "Thank you. Your enquiry has been received. I will get back to you via email.";
+      statusEl.style.color = "#4ade80"; // green
+      form.reset();
+    } catch (error) {
+      console.error(error);
+      statusEl.textContent =
+        "There was an issue submitting the form. Please try again or contact me via email/WhatsApp.";
+      statusEl.style.color = "#f97373"; // red
+    }
+  });
+</script>
+
+</body>
+</html>

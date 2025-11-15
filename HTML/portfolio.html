@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Portfolio | Tharun - Video Editor</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+<header>
+  <div class="container nav">
+    <div class="logo">THARUN / VIDEO EDITOR</div>
+    <nav>
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="portfolio.html" class="active">Work</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="services.html">Services</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+<main>
+  <section class="page">
+    <div class="container">
+      <h1 class="section-title">Selected Work</h1>
+      <p class="section-subtitle">
+        A few recent projects. I focus on pacing, sound design and clean storytelling.
+        Replace these videos with your own YouTube / Vimeo embeds.
+      </p>
+
+      <div class="portfolio-grid">
+        <!-- ITEM 1 -->
+        <article class="portfolio-item">
+          <div class="portfolio-thumb">
+            <iframe
+              src="https://www.youtube.com/embed/dQw4w9WgXcQ"
+              title="Reel Edit"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+              allowfullscreen>
+            </iframe>
+          </div>
+          <div class="portfolio-content">
+            <div class="portfolio-type">Instagram Reel</div>
+            <h3 class="portfolio-title">High-energy product reel</h3>
+            <p class="portfolio-desc">
+              Fast-paced transitions and beat-synced cuts to showcase a product in under 20 seconds.
+            </p>
+            <a href="https://www.youtube.com/" target="_blank" class="portfolio-link">
+              Watch full reel <span>↗</span>
+            </a>
+          </div>
+        </article>
+
+        <!-- ITEM 2 -->
+        <article class="portfolio-item">
+          <div class="portfolio-thumb">
+            <iframe
+              src="https://www.youtube.com/embed/dQw4w9WgXcQ"
+              title="Wedding Highlights"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+              allowfullscreen>
+            </iframe>
+          </div>
+          <div class="portfolio-content">
+            <div class="portfolio-type">Wedding Highlights</div>
+            <h3 class="portfolio-title">Emotional wedding story</h3>
+            <p class="portfolio-desc">
+              A cinematic highlight film focused on emotions, key moments, and smooth color grading.
+            </p>
+            <a href="https://www.youtube.com/" target="_blank" class="portfolio-link">
+              Watch wedding film <span>↗</span>
+            </a>
+          </div>
+        </article>
+
+        <!-- ITEM 3 -->
+        <article class="portfolio-item">
+          <div class="portfolio-thumb">
+            <iframe
+              src="https://www.youtube.com/embed/dQw4w9WgXcQ"
+              title="YouTube Video Edit"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+              allowfullscreen>
+            </iframe>
+          </div>
+          <div class="portfolio-content">
+            <div class="portfolio-type">YouTube Video</div>
+            <h3 class="portfolio-title">Talking-head + B-roll vlog</h3>
+            <p class="portfolio-desc">
+              Clean, watchable vlog with jump cuts, motion graphics, and subtle sound design.
+            </p>
+            <a href="https://www.youtube.com/" target="_blank" class="portfolio-link">
+              Watch YouTube edit <span>↗</span>
+            </a>
+          </div>
+        </article>
+
+        <!-- Add more items as needed -->
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="container">
+    © <span id="year"></span> TharunReddy · Video Editing Portfolio
+  </div>
+</footer>
+
+<script>
+  document.getElementById("year").textContent = new Date().getFullYear();
+</script>
+</body>
+</html>
